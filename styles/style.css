@@ -94,6 +94,7 @@ ol {
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
 }
 
@@ -108,15 +109,35 @@ ol {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  min-width: 212px;
+ 
 }
 
 .search-form__label {
   display: flex;
+  align-items: center;
   gap: 5px;
   width: fit-content;
   cursor: pointer;
 }
+
+.search-form__label-text {
+  line-height: 90%;
+}
+/* ФОКУСЫ */
+
+
+/* Текстового поля и чекбокса*/
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+  
+}
+
+
 
 
 .search-form__label:hover > .search-form__label-text {
@@ -142,13 +163,16 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  rgba(255, 255, 255, 0.70);
+  color: (255, 255, 255, 0.70);
 }
 
 
 
 
 .search-form__pseudo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 19px;
   height: 19px;
@@ -156,18 +180,13 @@ ol {
   cursor: pointer;
 }
 
-/* Испозован ::before, чтобы отказаться от :has() для корректной работы в Мозилле */
-.search-form__checkbox:checked + span::before { 
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before { 
   content: '';
-  position: absolute;
-  inset: 1px 1px;
   min-height: 14px;
   min-width: 14px;
   background-color:#FFF;
-}
-
-
-
+} 
 
 
 
@@ -195,6 +214,47 @@ ol {
 .more-button {
   width: 100%;
 }
+
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+  margin: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -255,6 +315,16 @@ ol {
 }
 
 
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+  margin: 3px;
+}
+
  
 .content__card-link_current {
   background-color: #545050; 
@@ -299,74 +369,14 @@ ol {
 
 
 
-/* ФОКУСЫ */
-
-
-/* Текстового поля */
-.search-form__textfield:focus {
-  outline: none;
-}
-
-.search-form__fieldset-title ~ .search-form__label:focus-within {
-  outline: 1px solid #FFF;
-  outline-offset: 2px;
-}
-
-
-/* Чекбокса */
-
-.search-form__checkbox:focus-visible + span::after {
-  content: "";
-  position: absolute;
-  inset: -3px -2px;
-  width: 65px;
-  height: 23px;
-  outline: 1px solid #FFF;
-}
-
-
-
-
-/* Кнопки */
-
-.button:active {
-  background-color: #545050;
-}
-
-.button:focus-visible {
-  outline: 1px solid #FFF;
-  outline-offset: 2px;
-}
-
-.button:hover {
-  text-decoration: underline;
-}
-
-.button:focus {
-  outline: none;
-}
-
-.button:focus-visible {
-  outline: 1px solid #FFF;
-  outline-offset: 1px;
-  margin: 3px;
-}
 
 
 
 
 
-/* Карточки */
 
 
 
-.content__card-link:focus {
-  outline: none;
-}
 
-.content__card-link:focus-visible {
-  outline: 1px solid #FFF;
-  outline-offset: 1px;
-  margin: 3px;
-}
+
 
