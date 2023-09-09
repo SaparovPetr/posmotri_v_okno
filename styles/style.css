@@ -56,7 +56,7 @@ ol {
 .page {
   display: flex;
   justify-content: center;
-  padding: 133px 30px;
+  align-items:center;
 
 }
 
