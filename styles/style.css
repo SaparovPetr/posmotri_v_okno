@@ -13,12 +13,12 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
 h1,
@@ -41,8 +41,6 @@ ol {
   list-style: none;
 }
 
-
-
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -52,9 +50,6 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-
-
 
 .content {
   display: flex;
@@ -71,7 +66,7 @@ ol {
 }
 
 .result__video-container {
- width: 711px;
+  width: 711px;
   height: 386px;
   position: relative;
 }
@@ -79,6 +74,8 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .search-form {
@@ -95,8 +92,8 @@ ol {
 }
 
 .search-form__fieldset-title {
-  color: #FFF;
-  font-family: Fira Sans Condensed;
+  color: #fff;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
@@ -105,7 +102,6 @@ ol {
   display: flex;
   justify-content: space-between;
   gap: 15px;
- 
 }
 
 .search-form__label {
@@ -120,28 +116,27 @@ ol {
   line-height: 90%;
 }
 
-
-/* ФОКУСЫ */
-
-
-/* Текстового поля и чекбокса*/
 .search-form__textfield:focus {
   outline: none;
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   outline-offset: 1px;
-  
 }
 
+/* Ниже у текстового поля ввода реализовано состояние :active из макета. 
+Перестраховался и на всякий случай сделал, ибо не понял, насколько важно его наличие. 
+Сделал через прямого потомка, чтобы это состояние не применялось к чекбоксу-тезке:  */
 
-
+.search-form__fieldset > .search-form__label:has(:active) {
+  outline: 1px solid #fff;
+  outline-offset: -1px;
+}
 
 .search-form__label:hover > .search-form__label-text {
   text-decoration: underline;
 }
-
 
 .search-form__textfield {
   appearance: none;
@@ -150,9 +145,9 @@ ol {
   color: rgba(255, 255, 255);
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #FFF;
-  border-top: 1px solid #FFF;
-  font-family: Fira Sans Condensed;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -161,49 +156,33 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  color: (255, 255, 255, 0.70);
+  color: (255, 255, 255, 0.7);
 }
-
-
-
 
 .search-form__pseudo-checkbox {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 19px;
-  height: 19px;
-  border: 1px solid  #FFF;
+  min-width: 19px;
+  min-height: 19px;
+  border: 1px solid #fff;
   cursor: pointer;
 }
 
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before { 
-  content: '';
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: "";
   min-height: 14px;
   min-width: 14px;
-  background-color:#FFF;
-} 
-
-
-
-
-/* КНОПКИ */
-/* КНОПКИ */
-/* КНОПКИ */
-/* КНОПКИ */
-/* КНОПКИ */
-/* КНОПКИ */
-/* КНОПКИ */
-/* КНОПКИ */
+  background-color: #fff;
+}
 
 .button {
-  color: #FFF;
-  border: 1px solid #FFF;
+  color: #fff;
+  border: 1px solid #fff;
   min-height: 34px;
   background-color: transparent;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -220,99 +199,68 @@ ol {
   width: 100%;
 }
 
-
-
-
-
 .button:focus {
   outline: none;
 }
 .button:focus-visible {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   outline-offset: 1px;
-  outline: 1px solid #FFF;
-  outline-offset: 1px;
-  margin: 3px;
+}
+
+/* Для исключения движения (смещения) кнопки "Найти" 
+внешний отступ устанавливаю только для кнопки "Показать еще": */
+.more-button:focus-visible {
+  margin: 2px;
 }
 
 .button:hover {
   text-decoration: underline;
 }
 
-
 .button:active {
   background-color: #545050;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 21px;
   min-width: 399px;
 }
 
 .title {
-  color: #FFF;
-  font-family: Oswald;
+  color: #fff;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
-
 }
 
 .content__accent {
   color: #545050;
 }
 
-
 .content__list {
   position: relative;
   max-height: 298px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
-
 
 .content__list-item:not(:last-child) {
   margin-bottom: 30px;
-  }
+}
 
 .content__list-item:last-child {
   margin-bottom: 0;
 }
 
-
 .content__card-link {
   display: block;
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   padding: 2px;
 }
 
@@ -320,20 +268,18 @@ ol {
   text-decoration: underline;
 }
 
-
 .content__card-link:focus {
   outline: none;
 }
 
 .content__card-link:focus-visible {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   outline-offset: 1px;
   margin: 2px;
 }
 
- 
 .content__card-link_current {
-  background-color: #545050; 
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -342,15 +288,15 @@ ol {
 }
 
 .content__video-card-description-container {
- min-width: 200px;
- min-height: 101px;
+  min-width: 200px;
+  min-height: 101px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -359,7 +305,7 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", "Arial", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -369,20 +315,6 @@ ol {
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-fit: cover;
+  object-position: top;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
