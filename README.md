@@ -1,4 +1,7 @@
-# posmotri_v_okno
-Проект "Посмотри в окно"
+# Проект "Посмотри в окно"
 
-https://github.com/SaparovPetr/posmotri_v_okno.git
+- Практика стилизации чужого приложения.
+- Практика стилизации форм.
+
+## Публикация:
+https://saparovpetr.github.io/posmotri_v_okno/
